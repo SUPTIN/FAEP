@@ -1,5 +1,5 @@
 
-# Sistema de Avaliação Especial de Desempenho para Servidores em Estágio Probatório
+# Sistema de Avaliação de Desempenho para Servidores em Estágio Probatório
 
 ## Sobre o Sistema FAEP
 
