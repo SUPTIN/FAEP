@@ -1,95 +1,91 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout.app')
 
-        <title>Laravel</title>
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+                <div class="panel-body">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+                    <div class="row">
 
-            .full-height {
-                height: 100vh;
-            }
+                      <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                          <a href="{{url('listaAvaliados')}}">
+                            <img src="icones/Test.png" alt="Fichas para Avaliar"/>
+                            <div class="caption">
+                              <h4 align="center">Avaliar</h4>
+                            </div>
+                        </a>
+                       </div>
+                      </div>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+                      <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                          <a href="{{url('listaAvaliadores')}}">
+                            <img src="icones/Gerente.png" alt="Lista dos Avaliadores"/>
+                            <div class="caption">
+                              <h4 align="center">Avaliadores</h4>
+                            </div>
+                        </a>
+                       </div>
+                      </div>
 
-            .position-ref {
-                position: relative;
-            }
+                      <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                          <a href="{{url('listaAvaliadores')}}">
+                            <img src="icones/setores.png" alt="Lista dos Setores"/>
+                            <div class="caption">
+                              <h4 align="center">Secretárias</h4>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      
+                      </div>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+                    </div>
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
+                    <div class="row">
+                      <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                          <a href="{{url('logs')}}">
+                            <img src="icones/log.png" alt="Log de Alteração"/>
+                            <div class="caption">
+                              <h4 align="center">Log de Alteração</h4>
+                            </div>
+                        </a>
+                       </div>
+                      </div>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+                      <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                          <a href="{{url('informacao')}}">
+                            <img src="icones/Admin.png" alt="Administração de Usuários"/>
+                            <div class="caption">
+                              <h4 align="center">Usuários</h4>
+                            </div>
+                        </a>
+                       </div>
+                      </div>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+                      <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                          <a href="{{url('informacao')}}">
+                            <img src="icones/Info.png" alt="sobre sistema"/>
+                            <div class="caption">
+                              <h4 align="center">Informações do Sistema</h4>
+                            </div>
+                        </a>
+                       </div>
+                     </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+           </div>
+      </div>
+   </div>
+</div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+@endsection
+

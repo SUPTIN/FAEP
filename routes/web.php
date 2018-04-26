@@ -11,6 +11,16 @@
 |
 */
 
+
+
+Route::get('informacao', 'FaepController@informacao');
+Route::get('logs', 'FaepController@viewLog');
+
+Route::get('listaAvaliados', 'FaepController@viewListaAvaliar');
+
+Route::get('listaAvaliadores', 'FaepController@viewListaAvaliadores');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
