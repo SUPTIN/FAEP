@@ -16,9 +16,9 @@
 Route::get('informacao', 'FaepController@informacao');
 Route::get('logs', 'FaepController@viewLog');
 
-Route::get('listaAvaliados', 'FaepController@viewListaAvaliar');
+Route::get('listaAvaliados', 'AvaliarController@viewListaAvaliar');
 
-Route::get('listaAvaliadores', 'FaepController@viewListaAvaliadores');
+Route::get('listaAvaliadores', 'AvaliadorController@viewListaAvaliadores');
 
 
 Route::get('/', function () {

@@ -16,13 +16,9 @@ class FaepController extends Controller
         return view('logsAlteracao');
     }
 
-    public function  viewListaAvaliar(){ 
-        return view('listaAvaliados');
+    public function  viewUser(){ 
+        return view('user');
     }
 
-    public function  viewListaAvaliadores(){ 
-        return view('listaAvaliadores');
-    }
-
-   
+  
 }
