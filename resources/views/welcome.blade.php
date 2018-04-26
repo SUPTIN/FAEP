@@ -12,7 +12,7 @@
 
                       <div class="col-sm-5 col-md-3">
                         <div class="thumbnail">
-                          <a href="{{url('listaAvaliados')}}">
+                          <a href="{{url('aceite')}}">
                             <img src="icones/Test.png" alt="Fichas para Avaliar"/>
                             <div class="caption">
                               <h4 align="center">Avaliar</h4>
@@ -62,10 +62,10 @@
 
                       <div class="col-sm-5 col-md-3">
                         <div class="thumbnail">
-                          <a href="{{url('informacao')}}">
-                            <img src="icones/Admin.png" alt="Administração de Usuários"/>
+                          <a href="{{url('periodos')}}">
+                            <img src="icones/periodo.png" alt="Período da Avaliação"/>
                             <div class="caption">
-                              <h4 align="center">Usuários</h4>
+                              <h4 align="center">Período Avaliação</h4>
                             </div>
                         </a>
                        </div>

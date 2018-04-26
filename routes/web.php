@@ -16,9 +16,12 @@
 Route::get('informacao', 'FaepController@informacao');
 Route::get('logs', 'FaepController@viewLog');
 
+Route::get('aceite', 'AvaliarController@viewAceite');
 Route::get('listaAvaliados', 'AvaliarController@viewListaAvaliar');
 
 Route::get('listaAvaliadores', 'AvaliadorController@viewListaAvaliadores');
+
+Route::get('periodos', 'PeriodoController@viewListaPeriodos');
 
 
 Route::get('/', function () {
