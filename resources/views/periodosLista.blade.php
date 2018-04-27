@@ -6,6 +6,9 @@
     <a class="add" href="{{url('/')}}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
+    <a class="add" href="{{url('novoPeriodo')}}" >
+        <i class="fa fa-plus-circle" aria-hidden="true" title="Cria novo Perído de avaliação"></i>
+    </a>
 	</h1> 
 
   <div class="row">
@@ -28,7 +31,7 @@
 	  	  	  @endif
 	  	  </td>
 	  	  <td>
-	  		<a href="{{url("$periodo->id/edit")}}" class="edit">
+	  		<a href="{{url("$periodo->id/editPeriodo")}}" class="edit">
 	  			<i class="fa fa-pencil-square-o" title="Edita o Período"></i>
 	  		</a>
 	  	  </td>
@@ -41,6 +44,7 @@
 	    </tr>
 	  @endforelse
 	</table>
+	<div align="center">{!! $periodos->links() !!}</div>
   </div>
 
 </div>

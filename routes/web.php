@@ -22,6 +22,8 @@ Route::get('listaAvaliados', 'AvaliarController@viewListaAvaliar');
 Route::get('listaAvaliadores', 'AvaliadorController@viewListaAvaliadores');
 
 Route::get('periodos', 'PeriodoController@viewListaPeriodos');
+Route::get('novoPeriodo', 'PeriodoController@viewFormPeriodos');
+Route::post('addPeriodo', 'PeriodoController@addNovoPeriodoAva');
 
 
 Route::get('/', function () {

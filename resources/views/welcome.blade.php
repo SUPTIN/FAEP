@@ -49,16 +49,7 @@
 
 
                     <div class="row">
-                      <div class="col-sm-5 col-md-3">
-                        <div class="thumbnail">
-                          <a href="{{url('logs')}}">
-                            <img src="icones/log.png" alt="Log de Alteração"/>
-                            <div class="caption">
-                              <h4 align="center">Log de Alteração</h4>
-                            </div>
-                        </a>
-                       </div>
-                      </div>
+                      
 
                       <div class="col-sm-5 col-md-3">
                         <div class="thumbnail">
@@ -66,6 +57,17 @@
                             <img src="icones/periodo.png" alt="Período da Avaliação"/>
                             <div class="caption">
                               <h4 align="center">Período Avaliação</h4>
+                            </div>
+                        </a>
+                       </div>
+                      </div>
+
+                     <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                          <a href="{{url('logs')}}">
+                            <img src="icones/log.png" alt="Log de Alteração"/>
+                            <div class="caption">
+                              <h4 align="center">Log de Alteração</h4>
                             </div>
                         </a>
                        </div>

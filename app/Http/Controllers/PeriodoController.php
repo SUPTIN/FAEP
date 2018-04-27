@@ -21,8 +21,22 @@ class PeriodoController extends Controller
     public function  viewListaPeriodos(){ 
     	$periodos = $this->periodo->orderBy('id')->paginate($this->totalPage);
     	return view('periodosLista', compact('periodos'));
+    }
 
-       /* $fichas = $this->fichaPR->orderBy('contribuinte')->paginate($this->totalPage);
-    	return view('fichaProduRural', compact('fichas'));*/
+    public function  viewFormPeriodos(){ 
+        return view('periodosForm');
+    }
+
+    public function  addNovoPeriodoAva(Request $request){ 
+
+        $dados = $request->except('_token');
+        if ($request->ativo != '1'){
+            $dados["ativo"] = '0';
+        }
+        $this->validate($request, $this->periodo->rules, $this->periodo->messages);
+
+        $this->periodo->create($dados);
+
+        return PeriodoController::viewListaPeriodos();
     }
 }
