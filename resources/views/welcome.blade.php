@@ -34,7 +34,7 @@
 
                       <div class="col-sm-5 col-md-3">
                         <div class="thumbnail">
-                          <a href="{{url('listaAvaliadores')}}">
+                          <a href="{{url('secretarias')}}">
                             <img src="icones/setores.png" alt="Lista dos Setores"/>
                             <div class="caption">
                               <h4 align="center">Secretárias</h4>
