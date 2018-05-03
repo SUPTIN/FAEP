@@ -48,4 +48,53 @@ class SecretariaController extends Controller
     	})->paginate($this->totalPage);
         return view('secretariaView', array('dados' => $dados), compact('locais'));
     }
+
+    public function viewFormEditSecretaria(Request $request){ 
+        $id= $request->id;
+        $dados = secretaria::find($id);
+        return view('secretariaFormEdit', array('dados' => $dados));
+    }
+    
+    public function atualizaSecretaria(Request $request){ 
+        $id= $request->id;
+        $dados = secretaria::find($id);
+        $this->validate($request, $this->secretaria->rules, $this->secretaria->messages);
+        if ($dados && $dados->exists){
+            $parametros = $request->all();
+            $dados->fill($parametros)->save();
+        }
+        return redirect('secretarias');
+    }
+
+    public function viewFormLocalTrab(Request $request){
+    	$id = $request->id;
+    	return view('secretariaFormNovoLocalTrab')->with('secretaria',$id);
+    }
+
+    public function addNovoLocalTrab(Request $request){ 
+        $dados = $request->except('_token');
+        $id = $request->id;
+        $this->validate($request, $this->localTrab->rules, $this->localTrab->messages);
+        $this->localTrab->create($dados);
+        $caminho = $id. '/viewSecretaria';
+        return redirect()->to($caminho);
+    }
+    public function editFormLocalTrab(Request $request){ 
+        $id = $request->id;
+        $dados = localTrab::find($id);        
+        return view('secretariaFormEditLocalTrab', array('dados' => $dados));
+    }
+    public function atualizaLocalTrab(Request $request){ 
+        $dados = $request->except('_token');
+        $id = $request->id;
+        $this->validate($request, $this->localTrab->rules, $this->localTrab->messages);
+        $dados = localTrab::find($id);
+        if ($dados && $dados->exists){
+            $parametros = $request->all();
+            $dados->fill($parametros)->save();
+        }
+        
+        $caminho = $dados->secretaria. '/viewSecretaria';
+        return redirect()->to($caminho);
+    }
 }
