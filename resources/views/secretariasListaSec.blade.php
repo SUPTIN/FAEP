@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 	<h1 class="title"> 
-		Lista das Secretárias
+		Lista das Secretarias
     <a class="add" href="{{url('/')}}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
