@@ -31,6 +31,11 @@ Route::get('{id}/viewSecretaria', 'SecretariaController@viewSecretaria');
 Route::get('{id}/editSecretaria', 'SecretariaController@viewFormEditSecretaria');
 Route::post('{id}/updateSecretaria', 'SecretariaController@atualizaSecretaria');
 
+Route::get('{id}/novoAvaliador', 'AvaliadorController@viewFormAvaliador');
+Route::post('{id}/addAvaliador', 'AvaliadorController@addAvaliador');
+Route::get('{id}/editAvaliador', 'AvaliadorController@editFormAvaliador');
+Route::post('{id}/updateAvaliador', 'AvaliadorController@atualizaAvaliador');
+
 Route::get('{id}/novoLocalTrab', 'SecretariaController@viewFormLocalTrab');
 Route::post('{id}/addLocalTrab', 'SecretariaController@addNovoLocalTrab');
 Route::get('{id}/editLocalTrab', 'SecretariaController@editFormLocalTrab');

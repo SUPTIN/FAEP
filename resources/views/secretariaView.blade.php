@@ -17,6 +17,46 @@
       </div>
       <div class="form-group">
         <h3 class="title">
+          Avaliadores
+          <a class="add" href="novoAvaliador"> 
+            <i class="fa fa-plus-circle" arian-hidden="true" title="Adicionar novo local de trabalho"></i>
+          </a>
+        </h3>
+      </div>
+      <table class="table table-hover">
+        <tr>
+          <th> Nome </th>
+          <th width="80px">Ativo?</th>
+          <th width="80px">Ações</th>
+        </tr>
+        @forelse($avaliadores as $avaliador)
+        <tr>
+          <td>{{$avaliador->nome }}</td>
+          <td align="center"> 
+            @if ($avaliador->ativo == '1')   
+               <i class="fa fa-thumbs-up" arian-hidden="true" title="Ativo SIM" style="color:green"></i>
+            @else  
+               <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i>            
+            @endif
+          </td>
+          <td>
+            <a href="{{url("$avaliador->id/editAvaliador")}}" class="edit">
+              <i class="fa fa-pencil-square-o" title="editar Avaliador"></i>
+            </a>
+          </td>
+        </tr>
+        @empty
+          <tr>
+            <td colspan="90"> Nenhum resultado encontrado!</td>
+          </tr>
+        @endforelse
+      </table>
+      <div align="center">{!! $avaliadores->links() !!}</div>
+
+
+
+      <div class="form-group">
+        <h3 class="title">
           Local de Trabalho
           <a class="add" href="novoLocalTrab"> 
             <i class="fa fa-plus-circle" arian-hidden="true" title="Adicionar novo local de trabalho"></i>
@@ -26,7 +66,7 @@
       <table class="table table-hover">
         <tr>
           <th> Descrição </th>
-          <th> Ação </th>
+          <th width="80px">Ações</th>
         </tr>
         @forelse($locais as $local)
         <tr>
@@ -43,6 +83,7 @@
           </tr>
         @endforelse
       </table>
+      <div align="center">{!! $locais->links() !!}</div>
 
 </div>
 @endsection
