@@ -8,16 +8,21 @@ use App\Http\Controllers\Controller;
 
 use App\secretaria;
 use App\localTrab;
+use App\avaliador;
 
 class SecretariaController extends Controller
 {
 	private $totalPage = 10;
+    private $totalPAvaliador = 5;
 	private $secretaria;
 	private $localTrab;
+    private $avaliador;
 
-	public function __construct(secretaria $secretaria, localTrab $localTrab){
+	public function __construct(secretaria $secretaria, localTrab $localTrab, avaliador $avaliador){
     	$this->secretaria = $secretaria;
     	$this->localTrab = $localTrab;
+        $this->avaliador = $avaliador;
+
     }
 
     public function  viewListaSec(){ 
@@ -46,7 +51,12 @@ class SecretariaController extends Controller
     		if($id)
     			$query->where('secretaria', '=', $id);
     	})->paginate($this->totalPage);
-        return view('secretariaView', array('dados' => $dados), compact('locais'));
+
+        $avaliadores = avaliador::where(function($query) use ($id){
+            if($id)
+                $query->where('setor', '=', $id);
+        })->paginate($this->totalPAvaliador);
+        return view('secretariaView', array('dados' => $dados), compact('locais', 'avaliadores'));
     }
 
     public function viewFormEditSecretaria(Request $request){ 
