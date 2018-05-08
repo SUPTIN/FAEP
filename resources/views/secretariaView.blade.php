@@ -27,6 +27,7 @@
         <tr>
           <th> Nome </th>
           <th width="80px">Ativo?</th>
+          <th width="80px">Aceite Ativo</th>
           <th width="80px">Ações</th>
         </tr>
         @forelse($avaliadores as $avaliador)
@@ -37,6 +38,13 @@
                <i class="fa fa-thumbs-up" arian-hidden="true" title="Ativo SIM" style="color:green"></i>
             @else  
                <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i>            
+            @endif
+          </td>
+          <td align="center"> 
+            @if ($avaliador->aceite == '1')   
+               <i class="fa fa-thumbs-up" arian-hidden="true" title="Aceite SIM" style="color:green"></i>
+            @else  
+               <i class="fa fa-thumbs-down" arian-hidden="true" title="Aceite NÃO" style="color:red"></i>            
             @endif
           </td>
           <td>
